@@ -33,7 +33,7 @@ def main():
     expenses = load_expenses()
 
 
-    choice = input("(A)dd Expense \n(V)iew Summary \n(Q)uit\n").upper()
+    choice = input("(A)dd Expense \n(V)iew Summary \n(C)lear Expenses \n(Q)uit\n").upper()
 
     while choice != 'Q':
         if choice == 'A':
@@ -42,9 +42,15 @@ def main():
 
         elif choice == 'V':
             view_summary(expenses)
+        elif choice == 'C':
+            confirm = input("Are you sure? This will delete all expenses. (Y/N)\n").upper()
+            if confirm == 'Y':
+                expenses.clear()
+                save_expenses(expenses)
+                print("Expenses cleared.")
         else:
             print("Please enter valid choice")
-        choice = input("(A)dd Expense \n(V)iew Summary \n(Q)uit\n").upper()
+        choice = input("(A)dd Expense \n(V)iew Summary \n(C)lear Expenses \n(Q)uit\n").upper()
 
 
 
