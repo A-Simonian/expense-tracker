@@ -33,7 +33,7 @@ def main():
     expenses = load_expenses()
 
 
-    choice = input("(A)dd Expense \n(V)iew Summary \n(Q)uit\n")
+    choice = input("(A)dd Expense \n(V)iew Summary \n(Q)uit\n").upper()
 
     while choice != 'Q':
         if choice == 'A':
@@ -42,7 +42,10 @@ def main():
 
         elif choice == 'V':
             view_summary(expenses)
-        choice = input("(A)dd Expense \n(V)iew Summary \n(Q)uit\n")
+        else:
+            print("Please enter valid choice")
+        choice = input("(A)dd Expense \n(V)iew Summary \n(Q)uit\n").upper()
+
 
 
 
